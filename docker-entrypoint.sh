@@ -29,7 +29,6 @@ if [ "$1" == "neo4j" ]; then
     setting "dbms.unmanaged_extension_classes" "${NEO4J_dbms_unmanagedExtensionClasses:-}"
     setting "dbms.allow_format_migration" "${NEO4J_dbms_allowFormatMigration:-}"
     setting "dbms.security.procedures.unrestricted" "${NEO4J_dbms_security_procedures_unrestricted:-apoc.*}"
-    setting "dbms.active_database" "${NEO4J_dbms_active_database:-nominal.db}"
 
     if [ "${NEO4J_AUTH:-}" == "none" ]; then
         setting "dbms.security.auth_enabled" "false"
