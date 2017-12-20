@@ -4,9 +4,9 @@ MAINTAINER Ollin Demian Langle Chimal <ollin.langle@ciencias.unam.mx>
 
 ENV REFRESHED_AT 2017-11-26
 
-ADD http://dist.neo4j.org/neo4j-community-3.3.0-unix.tar.gz /var/lib
-RUN tar -xzvf /var/lib/neo4j-community-3.3.0-unix.tar.gz
-RUN mv neo4j-community-3.3.0 /var/lib/neo4j
+ADD http://dist.neo4j.org/neo4j-enterprise-3.3.1-unix.tar.gz /var/lib
+RUN tar -xzvf /var/lib/neo4j-enterprise-3.3.1-unix.tar.gz
+RUN mv neo4j-enterprise-3.3.1 /var/lib/neo4j
 
 WORKDIR /var/lib/neo4j
 
@@ -27,7 +27,7 @@ RUN mkdir graphml
 VOLUME /data
 
 COPY docker-entrypoint.sh /tmp/docker-entrypoint.sh
-EXPOSE 7475 7476 7472
+EXPOSE 7474 7473 7687
 
 ENTRYPOINT ["/tmp/docker-entrypoint.sh"]
 
